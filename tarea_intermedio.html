@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tarea</title>
+		<meta charset="utf-8"/>
+		<style>
+			table {
+				margin-top: 20px;
+			}
+
+			table, tr, th, td {
+				border-collapse: collapse;
+				border-style: solid;
+				border-width: 1px;
+			}
+
+			th, td {
+				padding: 5px;
+			}
+
+			/* obtiene todos las etiquetas td y th que tengan la propiedad contentEditable=true */
+			td:hover[contentEditable=true], th:hover[contentEditable=true] {
+				background-color: #F06529;
+				color: white;
+			}
+
+			/* muestra una manita al poner el raton sobre las imagenes*/
+			.agregar, .remover {
+				cursor: hand;
+				cursor: pointer;
+			}
+
+		</style>
+
+		<script src="javascript/jquery-1.10.2.min.js"></script>
+
+		<script>
+			//NIVEL INTERMEDIO
+		</script>
+	</head>
+	<body>
+
+		<table>
+			<tr>
+				<th contentEditable="true">Nombre</th>
+				<th contentEditable="true">Domicilio</th>
+				<th contentEditable="true">Acciones</th>
+			</tr>
+			<tr>
+				<td contentEditable="true">Juanito Perez</td>
+				<td contentEditable="true">Montevideo Distrito Federal</td>
+				<td><img class="agregar" src="img/add.png"/><img class="remover" src="img/delete.png"/></td>
+			</tr>
+		</table>
+
+	</body>
+</html>

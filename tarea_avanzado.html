@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tarea</title>
+		<meta charset="utf-8"/>
+
+		<!-- COMENTARIO C1: IMPORTAMOS los estilos de jQuery UI-->
+		<!-- importamos el thema smoothness, jQuery UI tiene varios temas :) -->
+		<link rel="stylesheet" href="javascript/jquery-ui-1.10.3/themes/base/minified/jquery-ui.min.css" />
+
+		<style>
+			table {
+				margin-top: 20px;
+			}
+
+			table, tr, th, td {
+				border-collapse: collapse;
+				border-style: solid;
+				border-width: 1px;
+			}
+
+			th, td {
+				padding: 5px;
+			}
+
+			td:hover[contentEditable=true], th:hover[contentEditable=true] {
+				background-color: #F06529;
+				color: white;
+			}
+
+			/* muestra una manita al poner el raton sobre las imagenes*/
+			.agregar, .remover, .ver-mapa {
+				cursor: hand;
+				cursor: pointer;
+			}
+
+			.contenedor-mapa {
+				/*display: none;*/
+			}
+
+			#mapa {
+				height: 400px;
+				width: 400px;
+			}
+
+		</style>
+
+		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script src="javascript/jquery-1.10.2.min.js"></script>
+		<script src="javascript/jquery.gomap-1.3.2.min.js"></script>
+
+		<!-- COMENTARIO C2: IMPORTAMOS el javascript de jQuery UI -->
+		<script src="javascript/jquery-ui-1.10.3/ui/minified/jquery-ui.min.js" ></script>
+
+		<script>
+			//CODIGO
+		</script>
+	</head>
+	<body>
+
+		<div id="contenedor-mapa" title="Mapa de la Dirección"></div>
+
+		<table>
+			<tr>
+				<th contentEditable="true">Nombre</th>
+				<th contentEditable="true">Domicilio</th>
+				<th contentEditable="true">Acciones</th>
+			</tr>
+			<tr>
+				<td contentEditable="true">Juanito Perez</td>
+				<td class="direccion" contentEditable="true">Montevideo Distrito Federal</td>
+				<td><img class="agregar" src="img/add.png"/><img class="remover" src="img/delete.png"/><img class="ver-mapa" src="img/map.png"/></td>
+			</tr>
+		</table>
+
+	</body>
+</html>
