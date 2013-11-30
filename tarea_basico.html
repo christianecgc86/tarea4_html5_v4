@@ -36,6 +36,12 @@
 
 		<script>
 			//SU CODIGO JAVASCRIPT AQUI
+			$(function() {
+				$("#boton-agregar").click(function() {
+					var tabla = $("table");
+					tabla.append("<tr><td contentEditable=\"true\">Nombre</td><td contentEditable=\"true\">Domicilio</td></tr>");
+				});
+			});
 		</script>
 	</head>
 	<body>

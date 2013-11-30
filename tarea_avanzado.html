@@ -54,6 +54,41 @@
 
 		<script>
 			//CODIGO
+			$(function() {
+				
+					$("body").on("click", ".agregar", function(evento) {
+						var tabla = $("table");
+						tabla.append("<tr><td contentEditable=\"true\">Juanito Perez</td><td class=\"direccion\" contentEditable=\"true\">Montevideo Distrito Federal</td><td><img class=\"agregar\" src=\"img/add.png\"/><img class=\"remover\" src=\"img/delete.png\"/><img class=\"ver-mapa\" src=\"img/map.png\"/></td></tr>");
+					});
+					
+					$("body").on("click", ".remover", function(evento) {
+                        var tabla = $("table"); 
+                        var img_remover = $(evento.target);
+                        img_remover.parents("tr").remove();
+   		 			});
+   		 			
+   		 			$("body").on("click", ".ver-mapa", function(evento) {
+						var img_mapa = $(evento.target);
+						var dir = img_mapa.parents("td").siblings(".direccion").html();
+						var contenedor_mapa = $("#contenedor-mapa");
+						contenedor_mapa.html("<div id=\"mapa\"></div>");
+						contenedor_mapa.dialog({
+   					 		modal : true,
+   					 		width : "auto",
+   					 		close : function() {
+   						 		$("#mapa").remove();
+   					 		}
+   				 		});
+   				 		$("#mapa").goMap({
+							zoom: 19,
+							maptype: "ROADMAP",
+							markers:[{
+								address: dir
+							}]
+						});
+					});
+					
+			});
 		</script>
 	</head>
 	<body>
